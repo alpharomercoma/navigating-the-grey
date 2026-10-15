@@ -1,0 +1,267 @@
+{
+ "opus": {
+  "status": 200,
+  "seconds": 1.949,
+  "bytes": 126324
+ },
+ "robinsons-cainta": {
+  "status": 200,
+  "seconds": 0.299,
+  "bytes": 116517
+ },
+ "robinsons-galleria-ortigas": {
+  "status": 200,
+  "seconds": 0.506,
+  "bytes": 164348
+ },
+ "robinsons-magnolia": {
+  "status": 200,
+  "seconds": 0.503,
+  "bytes": 162807
+ },
+ "robinsons-metro-east": {
+  "status": 200,
+  "seconds": 0.301,
+  "bytes": 135841
+ },
+ "robinsons-novaliches": {
+  "status": 200,
+  "seconds": 0.531,
+  "bytes": 145177
+ },
+ "robinsons-otis": {
+  "status": 200,
+  "seconds": 0.505,
+  "bytes": 120178
+ },
+ "robinsons-place-antipolo": {
+  "status": 200,
+  "seconds": 0.512,
+  "bytes": 153818
+ },
+ "robinsons-place-las-pinas": {
+  "status": 200,
+  "seconds": 0.507,
+  "bytes": 131767
+ },
+ "robinsons-place-manila": {
+  "status": 200,
+  "seconds": 0.511,
+  "bytes": 184007
+ },
+ "robinsons-town-mall-malabon": {
+  "status": 200,
+  "seconds": 0.299,
+  "bytes": 124422
+ },
+ "robinsons-cagayan-de-oro": {
+  "status": 200,
+  "seconds": 0.974,
+  "bytes": 117647
+ },
+ "robinsons-cybergate-davao": {
+  "status": 200,
+  "seconds": 0.298,
+  "bytes": 113799
+ },
+ "pagadian": {
+  "status": 200,
+  "seconds": 1.018,
+  "bytes": 112263
+ },
+ "robinsons-place-butuan": {
+  "status": 200,
+  "seconds": 0.304,
+  "bytes": 132088
+ },
+ "robinsons-place-gensan": {
+  "status": 200,
+  "seconds": 0.521,
+  "bytes": 120499
+ },
+ "robinsons-place-iligan": {
+  "status": 200,
+  "seconds": 0.515,
+  "bytes": 135801
+ },
+ "robinsons-place-tagum": {
+  "status": 200,
+  "seconds": 0.508,
+  "bytes": 130208
+ },
+ "robinsons-place-valencia": {
+  "status": 200,
+  "seconds": 0.514,
+  "bytes": 128913
+ },
+ "robinsons-angeles": {
+  "status": 200,
+  "seconds": 0.514,
+  "bytes": 120530
+ },
+ "gapan": {
+  "status": 200,
+  "seconds": 1.081,
+  "bytes": 120135
+ },
+ "robinsons-luisita": {
+  "status": 200,
+  "seconds": 1.152,
+  "bytes": 117770
+ },
+ "robinsons-place-ilocos": {
+  "status": 200,
+  "seconds": 0.302,
+  "bytes": 139057
+ },
+ "la-union": {
+  "status": 200,
+  "seconds": 1.094,
+  "bytes": 121525
+ },
+ "robinsons-place-malolos": {
+  "status": 200,
+  "seconds": 0.902,
+  "bytes": 136465
+ },
+ "robinsons-place-pangasinan": {
+  "status": 200,
+  "seconds": 0.3,
+  "bytes": 127473
+ },
+ "robinsons-place-santiago": {
+  "status": 200,
+  "seconds": 0.514,
+  "bytes": 133959
+ },
+ "robinsons-place-tuguegarao": {
+  "status": 200,
+  "seconds": 0.522,
+  "bytes": 133738
+ },
+ "robinsons-starmills": {
+  "status": 200,
+  "seconds": 0.515,
+  "bytes": 131257
+ },
+ "galleria-south": {
+  "status": 200,
+  "seconds": 0.505,
+  "bytes": 143439
+ },
+ "robinsons-place-dasmarinas": {
+  "status": 200,
+  "seconds": 0.301,
+  "bytes": 132066
+ },
+ "robinsons-place-gen-trias": {
+  "status": 200,
+  "seconds": 0.511,
+  "bytes": 131401
+ },
+ "robinsons-place-imus": {
+  "status": 200,
+  "seconds": 0.626,
+  "bytes": 138058
+ },
+ "robinsons-place-lipa": {
+  "status": 200,
+  "seconds": 0.504,
+  "bytes": 131903
+ },
+ "robinsons-place-naga": {
+  "status": 200,
+  "seconds": 0.519,
+  "bytes": 131565
+ },
+ "robinsons-place-palawan": {
+  "status": 200,
+  "seconds": 0.509,
+  "bytes": 134980
+ },
+ "robinsons-sta-rosa": {
+  "status": 200,
+  "seconds": 0.3,
+  "bytes": 128838
+ },
+ "robinsons-tagaytay": {
+  "status": 200,
+  "seconds": 0.507,
+  "bytes": 115902
+ },
+ "robinsons-town-mall-los-banos": {
+  "status": 200,
+  "seconds": 0.517,
+  "bytes": 115832
+ },
+ "cybergate-bacolod": {
+  "status": 200,
+  "seconds": 0.511,
+  "bytes": 96136
+ },
+ "robinsons-cybergate-cebu": {
+  "status": 200,
+  "seconds": 0.509,
+  "bytes": 119343
+ },
+ "robinsons-fuente": {
+  "status": 200,
+  "seconds": 0.509,
+  "bytes": 119990
+ },
+ "robinsons-galleria-cebu": {
+  "status": 200,
+  "seconds": 0.51,
+  "bytes": 146161
+ },
+ "robinsons-north-tacloban": {
+  "status": 200,
+  "seconds": 1.037,
+  "bytes": 123792
+ },
+ "robinsons-place-antique": {
+  "status": 200,
+  "seconds": 0.302,
+  "bytes": 122456
+ },
+ "robinsons-place-bacolod": {
+  "status": 200,
+  "seconds": 0.513,
+  "bytes": 128213
+ },
+ "robinsons-place-dumaguete": {
+  "status": 200,
+  "seconds": 0.523,
+  "bytes": 140664
+ },
+ "robinsons-place-iloilo": {
+  "status": 200,
+  "seconds": 0.511,
+  "bytes": 133217
+ },
+ "robinsons-place-jaro": {
+  "status": 200,
+  "seconds": 0.51,
+  "bytes": 124434
+ },
+ "robinsons-place-ormoc": {
+  "status": 200,
+  "seconds": 0.522,
+  "bytes": 127396
+ },
+ "robinsons-place-pavia": {
+  "status": 200,
+  "seconds": 0.509,
+  "bytes": 122173
+ },
+ "robinsons-place-roxas": {
+  "status": 200,
+  "seconds": 0.505,
+  "bytes": 130064
+ },
+ "robinsons-place-tacloban": {
+  "status": 200,
+  "seconds": 0.513,
+  "bytes": 134600
+ }
+}

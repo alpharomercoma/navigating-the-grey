@@ -1,0 +1,267 @@
+[
+ {
+  "slug": "opus",
+  "name": "Opus Mall",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-cainta",
+  "name": "Robinsons Cainta",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-galleria-ortigas",
+  "name": "Robinsons Galleria",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-magnolia",
+  "name": "Robinsons Magnolia",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-metro-east",
+  "name": "Robinsons Metro East",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-novaliches",
+  "name": "Robinsons Novaliches",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-otis",
+  "name": "Robinsons Otis",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-place-antipolo",
+  "name": "Robinsons Place Antipolo",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-place-las-pinas",
+  "name": "Robinsons Place Las Pinas",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-place-manila",
+  "name": "Robinsons Place Manila",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-town-mall-malabon",
+  "name": "Robinsons Town Mall Malabon",
+  "region": "metro-manila"
+ },
+ {
+  "slug": "robinsons-cagayan-de-oro",
+  "name": "Robinsons Cagayan de Oro",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-cybergate-davao",
+  "name": "Robinsons Cybergate Davao",
+  "region": "mindanao"
+ },
+ {
+  "slug": "pagadian",
+  "name": "Robinsons Pagadian",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-place-butuan",
+  "name": "Robinsons Place Butuan",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-place-gensan",
+  "name": "Robinsons Place GenSan",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-place-iligan",
+  "name": "Robinsons Place Iligan",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-place-tagum",
+  "name": "Robinsons Place Tagum",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-place-valencia",
+  "name": "Robinsons Place Valencia",
+  "region": "mindanao"
+ },
+ {
+  "slug": "robinsons-angeles",
+  "name": "Robinsons Angeles",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "gapan",
+  "name": "Robinsons Gapan",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-luisita",
+  "name": "Robinsons Luisita",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-place-ilocos",
+  "name": "Robinsons Place Ilocos",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "la-union",
+  "name": "Robinsons Place La Union",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-place-malolos",
+  "name": "Robinsons Place Malolos",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-place-pangasinan",
+  "name": "Robinsons Place Pangasinan",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-place-santiago",
+  "name": "Robinsons Place Santiago",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-place-tuguegarao",
+  "name": "Robinsons Place Tuguegarao",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "robinsons-starmills",
+  "name": "Robinsons Starmills",
+  "region": "north-luzon"
+ },
+ {
+  "slug": "galleria-south",
+  "name": "Robinsons Galleria South",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-dasmarinas",
+  "name": "Robinsons Place Dasmarinas",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-gen-trias",
+  "name": "Robinsons Place Gen. Trias",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-imus",
+  "name": "Robinsons Place Imus",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-lipa",
+  "name": "Robinsons Place Lipa",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-naga",
+  "name": "Robinsons Place Naga",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-place-palawan",
+  "name": "Robinsons Place Palawan",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-sta-rosa",
+  "name": "Robinsons Sta. Rosa",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-tagaytay",
+  "name": "Robinsons Tagaytay",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "robinsons-town-mall-los-banos",
+  "name": "Robinsons Town Mall Los Banos",
+  "region": "south-luzon"
+ },
+ {
+  "slug": "cybergate-bacolod",
+  "name": "Robinsons Cybergate Bacolod",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-cybergate-cebu",
+  "name": "Robinsons Cybergate Cebu",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-fuente",
+  "name": "Robinsons Fuente",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-galleria-cebu",
+  "name": "Robinsons Galleria Cebu",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-north-tacloban",
+  "name": "Robinsons North Tacloban",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-antique",
+  "name": "Robinsons Place Antique",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-bacolod",
+  "name": "Robinsons Place Bacolod",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-dumaguete",
+  "name": "Robinsons Place Dumaguete",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-iloilo",
+  "name": "Robinsons Place Iloilo",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-jaro",
+  "name": "Robinsons Place Jaro",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-ormoc",
+  "name": "Robinsons Place Ormoc",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-pavia",
+  "name": "Robinsons Place Pavia",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-roxas",
+  "name": "Robinsons Place Roxas",
+  "region": "visayas"
+ },
+ {
+  "slug": "robinsons-place-tacloban",
+  "name": "Robinsons Place Tacloban",
+  "region": "visayas"
+ }
+]

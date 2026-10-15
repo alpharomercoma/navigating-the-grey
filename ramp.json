@@ -1,0 +1,75 @@
+{
+  "capacity": 20,
+  "rows": [
+    {
+      "sent_per_s": 4,
+      "got_per_s": 4.0,
+      "status_429": 0,
+      "status_503": 0,
+      "median_ms": 513
+    },
+    {
+      "sent_per_s": 8,
+      "got_per_s": 8.0,
+      "status_429": 0,
+      "status_503": 0,
+      "median_ms": 513
+    },
+    {
+      "sent_per_s": 12,
+      "got_per_s": 12.0,
+      "status_429": 0,
+      "status_503": 0,
+      "median_ms": 513
+    },
+    {
+      "sent_per_s": 16,
+      "got_per_s": 16.0,
+      "status_429": 0,
+      "status_503": 0,
+      "median_ms": 513
+    },
+    {
+      "sent_per_s": 20,
+      "got_per_s": 19.6,
+      "status_429": 0,
+      "status_503": 0,
+      "median_ms": 581
+    },
+    {
+      "sent_per_s": 24,
+      "got_per_s": 19.7,
+      "status_429": 0,
+      "status_503": 6,
+      "median_ms": 1088
+    },
+    {
+      "sent_per_s": 28,
+      "got_per_s": 19.8,
+      "status_429": 25,
+      "status_503": 5,
+      "median_ms": 1229
+    },
+    {
+      "sent_per_s": 32,
+      "got_per_s": 19.8,
+      "status_429": 67,
+      "status_503": 0,
+      "median_ms": 973
+    },
+    {
+      "sent_per_s": 36,
+      "got_per_s": 17.7,
+      "status_429": 106,
+      "status_503": 6,
+      "median_ms": 982
+    },
+    {
+      "sent_per_s": 40,
+      "got_per_s": 12.3,
+      "status_429": 160,
+      "status_503": 8,
+      "median_ms": 1036
+    }
+  ]
+}
