@@ -2,68 +2,68 @@
   {
     "malls": 53,
     "rows": 8554,
-    "seconds": 32.62,
-    "malls_per_s": 1.62,
+    "seconds": 32.46,
+    "malls_per_s": 1.63,
     "python": "3.13.16",
     "gil": true,
     "module": "scale.step1_sync",
     "label": "Sync, a for loop",
     "runs": [
-      32.58,
-      32.73,
-      32.62
+      32.46,
+      32.46,
+      32.59
     ]
   },
   {
     "malls": 53,
     "rows": 8554,
-    "seconds": 2.87,
-    "malls_per_s": 18.48,
+    "seconds": 2.68,
+    "malls_per_s": 19.78,
     "python": "3.13.16",
     "gil": true,
     "module": "scale.step2_threads",
-    "label": "32 threads",
+    "label": "53 threads",
     "runs": [
-      2.87,
-      2.82,
-      2.95
+      2.68,
+      2.68,
+      2.6
     ]
   },
   {
     "malls": 53,
     "rows": 8554,
-    "seconds": 2.51,
-    "malls_per_s": 21.11,
+    "seconds": 2.33,
+    "malls_per_s": 22.72,
     "python": "3.13.16",
     "gil": true,
     "module": "scale.step3_asyncio",
-    "label": "asyncio, 32 at once",
+    "label": "asyncio, all 53 at once",
     "runs": [
-      2.72,
-      2.51,
-      2.41
+      2.16,
+      2.33,
+      2.36
     ]
   },
   {
     "malls": 53,
     "rows": 8554,
-    "seconds": 2.55,
-    "malls_per_s": 20.82,
+    "seconds": 2.14,
+    "malls_per_s": 24.73,
     "python": "3.13.16",
     "gil": true,
     "module": "scale.step4_processes",
-    "label": "32 processes",
+    "label": "53 processes",
     "runs": [
-      2.41,
-      2.57,
-      2.55
+      2.14,
+      2.14,
+      2.14
     ]
   },
   {
     "malls": 53,
     "rows": 8554,
-    "seconds": 2.03,
-    "malls_per_s": 26.07,
+    "seconds": 2.02,
+    "malls_per_s": 26.21,
     "python": "3.13.16",
     "gil": true,
     "module": "scale.step5_hybrid",
@@ -71,22 +71,22 @@
     "runs": [
       2.03,
       2.02,
-      2.04
+      2.01
     ]
   },
   {
     "malls": 53,
     "rows": 8554,
     "seconds": 2.03,
-    "malls_per_s": 26.16,
+    "malls_per_s": 26.12,
     "python": "3.14.6",
     "gil": false,
     "module": "scale.step2_threads",
-    "label": "32 threads, Python 3.14t",
+    "label": "53 threads, Python 3.14t",
     "runs": [
       2.03,
-      2.02,
-      2.14
+      2.03,
+      2.05
     ]
   }
 ]

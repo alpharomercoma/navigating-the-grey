@@ -58,10 +58,10 @@ def _s(seconds, unit="s"):
 
 
 # ---------------------------------------------------------------- the Part 2 scoreboard
-ORDER = ["Sync, a for loop", "32 threads", "asyncio, 32 at once", "32 processes",
-         "A process per core, asyncio inside", "32 threads, Python 3.14t"]
+ORDER = ["Sync, a for loop", "53 threads", "asyncio, all 53 at once", "53 processes",
+         "A process per core, asyncio inside", "53 threads, Python 3.14t"]
 SHOWN = {"A process per core, asyncio inside": f"{os.cpu_count()} processes + asyncio",
-         "32 threads, Python 3.14t": "32 threads on 3.14t"}
+         "53 threads, Python 3.14t": "53 threads on 3.14t"}
 _board = {}
 
 
@@ -83,7 +83,7 @@ def score(label, started, pages):
 
 
 def scoreboard():
-    """Every run so far, next to the talk's numbers (median of 3, a 2-core machine, 14 Oct 2026)."""
+    """Every run so far, next to the talk's numbers (median of 3, a 2-core machine, 17 Oct 2026)."""
     talk = _talk()
     loop = _board.get(ORDER[0]) or talk[ORDER[0]]
     print(f"{'all 53 malls':<26}{'here':>8}{'slide':>8}{'vs loop':>9}")
@@ -100,7 +100,7 @@ def scoreboard():
 
 
 def show_results(path="my_results.json", talk="scale/results.json"):
-    """Your scale/bench.py results next to the talk's (14 Oct, a 2-core cloud machine)."""
+    """Your scale/bench.py results next to the talk's (17 Oct, a 2-core cloud machine)."""
     mine = json.loads(Path(path).read_text())
     theirs = _talk(talk)
     loop = next(r["seconds"] for r in mine if r["module"] == "scale.step1_sync")
@@ -110,4 +110,4 @@ def show_results(path="my_results.json", talk="scale/results.json"):
         bar = "█" * max(1, round(r["seconds"] / loop * 40))
         print(f"{r['label']:<36}{_s(r['seconds']):>8}{(_s(talk_s) if talk_s else '-'):>8}"
               f"{loop / r['seconds']:>8.0f}x  {bar}")
-    print(f"\n{mine[0]['rows']:,} stores each time. Talk numbers: median of 3 runs on 14 Oct 2026.")
+    print(f"\n{mine[0]['rows']:,} stores each time. Talk numbers: median of 3 runs on 17 Oct 2026.")

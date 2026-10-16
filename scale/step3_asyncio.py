@@ -1,4 +1,6 @@
-"""Step 3, asyncio: one thread, 32 malls in flight. The event loop switches at every await."""
+"""Step 3, asyncio: one thread, every mall in flight at once. The event loop switches at every await.
+
+Fine against the replay on your machine. Against a real site, the site's limit decides how many you send."""
 import asyncio
 
 import aiohttp
@@ -7,13 +9,10 @@ from common.malls import URL
 from common.timing import timed
 from doors.door1_robinsons import parse
 
-at_once = asyncio.Semaphore(32)           # 32 max
-
 
 async def scrape_mall(s, slug):
-    async with at_once:
-        res = await s.get(URL + slug)
-        return parse(await res.text())
+    res = await s.get(URL + slug)
+    return parse(await res.text())
 
 
 async def main(slugs):

@@ -7,7 +7,7 @@ from scale.step1_sync import scrape_mall  # unchanged
 
 
 def scrape(slugs):
-    with ProcessPoolExecutor(max_workers=32) as pool:
+    with ProcessPoolExecutor(max_workers=len(slugs)) as pool:  # one process per mall
         parts = pool.map(scrape_mall, slugs)
         return [r for part in parts for r in part]
 

@@ -31,9 +31,9 @@ doors/                       Part 1 · Where the data lives: one mall, three doo
 
 scale/                       Part 2 · Being at scale: 53 malls, six ways
   step1_sync.py                a for loop, one mall at a time
-  step2_threads.py             32 threads
-  step3_asyncio.py             asyncio, 32 at once
-  step4_processes.py           32 processes
+  step2_threads.py             53 threads, one per mall
+  step3_asyncio.py             asyncio, all 53 at once
+  step4_processes.py           53 processes, one per mall
   step5_hybrid.py              a process per core, asyncio inside
   three_malls.py               the three-mall timelines on "Sync vs Async"
   memory.py                    what a thread and a process cost
@@ -97,7 +97,7 @@ python -m doors.door2_megaworld --headful    # the same page in a window you can
 python -m doors.door3_megaworld_api
 
 python -m scale.step1_sync                   # about 33 s: start it during "Where the Time Goes"
-python -m scale.step3_asyncio                # the same 53 malls in about 2.5 s
+python -m scale.step3_asyncio                # the same 53 malls in about 2.3 s
 python -m scale.bench --runs 3               # all six, median of 3, as on the slides
 python -m limits.ramp                        # starts its own test server; about 1.5 min
 ```
@@ -107,7 +107,7 @@ reads the API answers saved in `data/recordings/megaworld/`, and door 2 shows th
 what the browser run found (a browser needs the live site).
 
 Don't run `scale.step4_processes` live on a Mac or Windows laptop. Those start every worker with
-`spawn`, a fresh Python each, and 32 of them took 9.5 s on the 2-core test machine (fork: 2.5 s).
+`spawn`, a fresh Python each, and 53 of them took 12.8 s on the 2-core test machine (fork: 2.1 s).
 Since Python 3.14 the Linux default is `forkserver`, so the `if __name__ == "__main__":` guard is
 needed on every platform.
 
@@ -130,20 +130,20 @@ needed on every platform.
 
 ## The numbers on the slides
 
-`python -m scale.bench --runs 3` on a 2-core cloud VM, Python 3.13, 14 Oct 2026, median of 3 runs,
+`python -m scale.bench --runs 3` on a 2-core cloud VM, Python 3.13, 17 Oct 2026, median of 3 runs,
 against the replay of 53 malls (8,554 stores; median page 511 ms of waiting and about 35 ms of parsing):
 
 | Model | Time | vs the for loop |
 |---|---:|---:|
-| Sync, a for loop | 32.6 s | 1x |
-| 32 threads | 2.9 s | 11x |
-| asyncio, 32 at once | 2.5 s | 13x |
-| 32 processes (fork) | 2.6 s | 13x |
+| Sync, a for loop | 32.5 s | 1x |
+| 53 threads, one per mall | 2.7 s | 12x |
+| asyncio, all 53 at once | 2.3 s | 14x |
+| 53 processes, one per mall (fork) | 2.1 s | 15x |
 | A process per core (2), asyncio inside | 2.0 s | 16x |
-| 32 threads, Python 3.14t (no GIL) | 2.0 s | 16x |
+| 53 threads, Python 3.14t (no GIL) | 2.0 s | 16x |
 | The slowest mall (Opus Mall) on its own | 1.95 s | the floor |
 
-93% of the for loop's 32.6 s is waiting on the network. Your laptop will differ, especially for
+93% of the for loop's 32.5 s is waiting on the network. Your laptop will differ, especially for
 processes (more cores, and `spawn` on macOS and Windows). Re-record from the network you present from
 (`python -m replay.record_robinsons`, about two minutes), then run `python -m scale.bench --runs 3` and
 update the slides if the numbers move.

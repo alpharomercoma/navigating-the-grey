@@ -18,9 +18,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 PLAN = [  # module, label
     ("scale.step1_sync", "Sync, a for loop"),
-    ("scale.step2_threads", "32 threads"),
-    ("scale.step3_asyncio", "asyncio, 32 at once"),
-    ("scale.step4_processes", "32 processes"),
+    ("scale.step2_threads", "53 threads"),
+    ("scale.step3_asyncio", "asyncio, all 53 at once"),
+    ("scale.step4_processes", "53 processes"),
     ("scale.step5_hybrid", "A process per core, asyncio inside"),
 ]
 
@@ -51,7 +51,7 @@ def main():
     if not args.ft_python and (ROOT / ".venv-ft/bin/python").exists():
         args.ft_python = str(ROOT / ".venv-ft/bin/python")
     if args.ft_python:
-        plan.append(("scale.step2_threads", "32 threads, Python 3.14t", args.ft_python))
+        plan.append(("scale.step2_threads", "53 threads, Python 3.14t", args.ft_python))
     results = []
     try:
         for module, label, python in plan:
