@@ -6,7 +6,7 @@
     "malls_per_s": 1.62,
     "python": "3.13.16",
     "gil": true,
-    "file": "scale_1_sync.py",
+    "module": "scale.step1_sync",
     "label": "Sync, a for loop",
     "runs": [
       32.58,
@@ -21,7 +21,7 @@
     "malls_per_s": 18.48,
     "python": "3.13.16",
     "gil": true,
-    "file": "scale_2_threads.py",
+    "module": "scale.step2_threads",
     "label": "32 threads",
     "runs": [
       2.87,
@@ -36,7 +36,7 @@
     "malls_per_s": 21.11,
     "python": "3.13.16",
     "gil": true,
-    "file": "scale_3_asyncio.py",
+    "module": "scale.step3_asyncio",
     "label": "asyncio, 32 at once",
     "runs": [
       2.72,
@@ -51,7 +51,7 @@
     "malls_per_s": 20.82,
     "python": "3.13.16",
     "gil": true,
-    "file": "scale_4_processes.py",
+    "module": "scale.step4_processes",
     "label": "32 processes",
     "runs": [
       2.41,
@@ -66,7 +66,7 @@
     "malls_per_s": 26.07,
     "python": "3.13.16",
     "gil": true,
-    "file": "scale_5_hybrid.py",
+    "module": "scale.step5_hybrid",
     "label": "A process per core, asyncio inside",
     "runs": [
       2.03,
@@ -81,7 +81,7 @@
     "malls_per_s": 26.16,
     "python": "3.14.6",
     "gil": false,
-    "file": "scale_2_threads.py",
+    "module": "scale.step2_threads",
     "label": "32 threads, Python 3.14t",
     "runs": [
       2.03,

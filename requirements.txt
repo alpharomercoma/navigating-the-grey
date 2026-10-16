@@ -1,0 +1,4 @@
+requests
+beautifulsoup4
+aiohttp
+playwright      # door 2 only: then run  python -m playwright install chromium

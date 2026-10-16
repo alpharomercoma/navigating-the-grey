@@ -1,11 +1,11 @@
-"""Scale 3, asyncio: one thread, 32 malls in flight. The event loop switches at every await."""
+"""Step 3, asyncio: one thread, 32 malls in flight. The event loop switches at every await."""
 import asyncio
 
 import aiohttp
 
-from door1_robinsons import parse
-from malls import URL
-from timing import timed
+from common.malls import URL
+from common.timing import timed
+from doors.door1_robinsons import parse
 
 at_once = asyncio.Semaphore(32)           # 32 max
 

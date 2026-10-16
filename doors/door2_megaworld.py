@@ -1,9 +1,9 @@
 """Door 2: Megaworld's mall page is an empty shell, and JavaScript fills it. A real browser runs it.
 
-    python -m playwright install chromium     # once
-    python door2_megaworld.py
-    python door2_megaworld.py --headful    # the same, in a window you can watch (needs a screen)
-    python door2_megaworld.py --replay     # no Wi-Fi: the saved shell, and the browser run's result
+    python -m playwright install chromium            # once
+    python -m doors.door2_megaworld
+    python -m doors.door2_megaworld --headful    # the same, in a window you can watch (needs a screen)
+    python -m doors.door2_megaworld --replay     # no Wi-Fi: the saved shell, and the browser run's result
 """
 import os
 import sys
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     HEADFUL = "--headful" in sys.argv
     t = time.perf_counter()
     if REPLAY:
-        shell = (Path(__file__).resolve().parent / "recordings/megaworld/uptown-mall.html").read_text()
+        shell = (Path(__file__).resolve().parents[1] / "data/recordings/megaworld/uptown-mall.html").read_text()
     else:
         shell = requests.get(URL).text
     print(f"What requests sees: {len(shell.encode()) / 1000:.1f} KB, "

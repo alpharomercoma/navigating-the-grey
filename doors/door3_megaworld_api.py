@@ -1,7 +1,7 @@
 """Door 3: the page's own API. Megaworld's page asks a CMS for its stores; ask it yourself.
 
-    python door3_megaworld_api.py
-    python door3_megaworld_api.py --replay    # no Wi-Fi: the responses record_megaworld.py saved
+    python -m doors.door3_megaworld_api
+    python -m doors.door3_megaworld_api --replay    # no Wi-Fi: the responses replay/record_megaworld.py saved
 """
 import json
 import sys
@@ -14,7 +14,7 @@ UPTOWN_MALL = '{"reference": {"$in_query": {"name": "Uptown Mall"}}}'
 # Megaworld's public, read-only delivery keys: the site sends them to every visitor's browser.
 KEYS = {"api_key": "blt827157d7af7bc6d4", "access_token": "cs12c8f62754c81457af4cc5fc"}
 
-SAVED = Path(__file__).resolve().parent / "recordings" / "megaworld"
+SAVED = Path(__file__).resolve().parents[1] / "data" / "recordings" / "megaworld"
 
 if "--replay" in sys.argv:
     class requests:  # same call, answered from disk
@@ -24,7 +24,7 @@ if "--replay" in sys.argv:
                 def json(self):
                     return json.loads((SAVED / f"tenants-{params.get('skip', 0)}.json").read_text())
             return Saved()
-    print("(replayed from recordings/megaworld)")
+    print("(replayed from data/recordings/megaworld)")
 else:
     import requests
 

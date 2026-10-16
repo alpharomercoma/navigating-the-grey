@@ -3,7 +3,7 @@ import json
 import sys
 import time
 
-from malls import SLUGS
+from common.malls import SLUGS
 
 
 def duration(seconds):

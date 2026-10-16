@@ -1,6 +1,6 @@
 """What a limit looks like: hold a rate for a few seconds, raise it, and watch what comes back.
 
-    python ramp.py                 # starts replay.py --capacity 20 on port 8801, ramps 4 to 40 requests/s
+    python -m limits.ramp    # starts replay/server.py --capacity 20 on port 8801, ramps 4 to 40 requests/s
 
 This only ever talks to a test server on your own machine, built to send at most 20 pages a second.
 Healthy: every request becomes a page. Plateau: you send more and get no more, and pages come back
@@ -21,9 +21,10 @@ from pathlib import Path
 
 from aiohttp import ClientSession, ClientTimeout, TCPConnector
 
-from malls import SLUGS
+from common.malls import SLUGS
 
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
 
 
 async def hold(http, url, rate, seconds):
@@ -76,8 +77,8 @@ def main():
     ap.add_argument("--rest", type=float, default=3, help="pause between rates")
     args = ap.parse_args()
 
-    server = subprocess.Popen([sys.executable, str(HERE / "replay.py"), "--port", "8801",
-                               "--capacity", str(args.capacity)], stdout=subprocess.DEVNULL)
+    server = subprocess.Popen([sys.executable, "-m", "replay.server", "--port", "8801",
+                               "--capacity", str(args.capacity)], cwd=ROOT, stdout=subprocess.DEVNULL)
     try:
         for _ in range(50):
             try:

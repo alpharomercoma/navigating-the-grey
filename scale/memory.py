@@ -1,6 +1,6 @@
 """What one worker costs in memory: the "Each worker adds" row on "Threads vs Processes". Linux only (/proc).
 
-    python memory.py
+    python -m scale.memory
 
 Threads: how much the process's resident memory grows per idle thread.
 Processes: each worker's resident memory (RSS) and its own, unshared memory (USS), for every start method.
@@ -14,9 +14,9 @@ import time
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
-from door1_robinsons import parse
+from doors.door1_robinsons import parse
 
-PAGE = Path(__file__).resolve().parent / "recordings/robinsons/robinsons-place-manila.html"
+PAGE = Path(__file__).resolve().parents[1] / "data/recordings/robinsons/robinsons-place-manila.html"
 
 
 def rss_kb(pid="self"):

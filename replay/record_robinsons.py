@@ -1,8 +1,8 @@
 """Record every Robinsons mall directory once, politely, for the speed benchmark.
 
-    python record.py            # 53 pages, one a second: about 2 minutes
+    python -m replay.record_robinsons    # 53 pages, one a second: about 2 minutes
 
-Each page is saved with how long the real site took to send it. replay.py serves these pages
+Each page is saved with how long the real site took to send it. replay/server.py serves these pages
 back from your laptop with the same delays, so the benchmark hits Robinsons zero times.
 Re-record from the network you'll present from: the delays are part of the result.
 """
@@ -12,8 +12,8 @@ from pathlib import Path
 
 import requests
 
-HERE = Path(__file__).resolve().parent
-OUT = HERE / "recordings" / "robinsons"
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "data" / "recordings" / "robinsons"
 URL = "https://robinsonsmalls.com/mall-info/{slug}"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; navigating-the-grey talk demo; alpharomercoma@proton.me)"}
 GAP = 1.0  # seconds between requests
@@ -21,7 +21,7 @@ GAP = 1.0  # seconds between requests
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    malls = json.loads((HERE / "robinsons_malls.json").read_text())
+    malls = json.loads((ROOT / "data" / "robinsons_malls.json").read_text())
     timings = {}
     with requests.Session() as s:
         s.headers.update(HEADERS)

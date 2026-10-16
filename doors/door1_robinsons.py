@@ -1,7 +1,7 @@
 """Door 1: the stores are already in the HTML. requests fetches it, BeautifulSoup picks it apart.
 
-    python door1_robinsons.py
-    python door1_robinsons.py --replay    # no Wi-Fi: the same page from replay.py
+    python -m doors.door1_robinsons
+    python -m doors.door1_robinsons --replay    # no Wi-Fi: the same page, from replay/server.py
 """
 import sys
 import time
@@ -9,7 +9,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from malls import LIVE, URL as REPLAY
+from common.malls import LIVE, URL as REPLAY
 
 
 def parse(html):

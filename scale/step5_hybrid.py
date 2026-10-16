@@ -1,11 +1,11 @@
-"""Scale 5, the production pattern: one asyncio loop per CPU core. Waits overlap in each loop,
+"""Step 5, the production pattern: one asyncio loop per CPU core. Waits overlap in each loop,
 and every core parses."""
 import asyncio
 import os
 from concurrent.futures import ProcessPoolExecutor
 
-from scale_3_asyncio import main
-from timing import timed
+from common.timing import timed
+from scale.step3_asyncio import main
 
 N = os.cpu_count()
 

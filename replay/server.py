@@ -1,8 +1,8 @@
 """Robinsons, replayed on your laptop: every mall directory exactly as the real site sent it, after the
-same delay it took. The speed benchmark hits this, never robinsonsmalls.com. Record first: record.py.
+same delay it took. The speed benchmark hits this, never robinsonsmalls.com. Record first: replay/record_robinsons.py.
 
-    python replay.py                 # http://127.0.0.1:8800/mall-info/robinsons-cybergate-davao
-    python replay.py --capacity 20   # a server that can only send 20 pages a second (for ramp.py)
+    python -m replay.server                 # http://127.0.0.1:8800/mall-info/robinsons-cybergate-davao
+    python -m replay.server --capacity 20   # can only send 20 pages a second (for limits/ramp.py)
 """
 from __future__ import annotations
 
@@ -17,8 +17,8 @@ from pathlib import Path
 
 from aiohttp import web
 
-HERE = Path(__file__).resolve().parent
-REC = HERE / "recordings" / "robinsons"
+ROOT = Path(__file__).resolve().parents[1]
+REC = ROOT / "data" / "recordings" / "robinsons"
 
 
 class Capacity:
@@ -84,10 +84,10 @@ def make_app(capacity: float | None) -> web.Application:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--port", type=int, default=8800)
-    ap.add_argument("--capacity", type=float, help="pages a second the server can send (for ramp.py)")
+    ap.add_argument("--capacity", type=float, help="pages a second the server can send (for limits/ramp.py)")
     args = ap.parse_args()
     if not (REC / "timings.json").exists():
-        raise SystemExit("No recordings yet: run python record.py first.")
+        raise SystemExit("No recordings yet: run python -m replay.record_robinsons first.")
     print(f"Robinsons, replayed: http://127.0.0.1:{args.port}/mall-info/robinsons-cybergate-davao"
           + (f" ({args.capacity:g} pages/s at most)" if args.capacity else ""), flush=True)
     web.run_app(make_app(args.capacity), host="127.0.0.1", port=args.port,

@@ -1,9 +1,9 @@
-"""Scale 4, processes: the thread code with one word changed. Each worker is its own Python,
+"""Step 4, processes: the thread code with one word changed. Each worker is its own Python,
 so the parsing runs on every core. Each worker also costs a whole interpreter."""
 from concurrent.futures import ProcessPoolExecutor
 
-from scale_1_sync import scrape_mall  # unchanged
-from timing import timed
+from common.timing import timed
+from scale.step1_sync import scrape_mall  # unchanged
 
 
 def scrape(slugs):
@@ -12,5 +12,5 @@ def scrape(slugs):
         return [r for part in parts for r in part]
 
 
-if __name__ == "__main__":    # needed: workers re-import this file
+if __name__ == "__main__":    # needed: workers re-import this module
     timed(scrape)

@@ -1,8 +1,8 @@
 """Save Megaworld's Uptown Mall page and its store API once, so doors 2 and 3 have a fallback.
 
-    python record_megaworld.py      # 4 requests, a second apart
+    python -m replay.record_megaworld    # 4 requests, a second apart
 
-door2_megaworld.py --replay and door3_megaworld_api.py --replay read these files instead of the
+The doors' --replay options read these files instead of the
 network. Use them only if the venue Wi-Fi fails; the live run is the point of the demo.
 """
 import json
@@ -11,11 +11,11 @@ from pathlib import Path
 
 import requests
 
-from door2_megaworld import URL
-from door3_megaworld_api import API, ENV, KEYS, UPTOWN_MALL
+from doors.door2_megaworld import URL
+from doors.door3_megaworld_api import API, ENV, KEYS, UPTOWN_MALL
 
-HERE = Path(__file__).resolve().parent
-OUT = HERE / "recordings" / "megaworld"
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "data" / "recordings" / "megaworld"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; navigating-the-grey talk demo; alpharomercoma@proton.me)"}
 
 

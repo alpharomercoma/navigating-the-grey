@@ -1,7 +1,7 @@
 """Sync vs async on three malls near Davao, timed per mall: the numbers on "Sync vs Async, Side by Side".
 
-    python replay.py &          # the 53 recorded pages, on your laptop
-    python three_malls.py       # median of 7 runs each
+    python -m replay.server &        # the 53 recorded pages, on your laptop
+    python -m scale.three_malls      # median of 7 runs each
 
 For each mall: when the request went out, when the page was in hand, when it was parsed.
 """
@@ -12,8 +12,8 @@ import time
 import aiohttp
 import requests
 
-from door1_robinsons import parse
-from malls import URL
+from common.malls import URL
+from doors.door1_robinsons import parse
 
 THREE = ["robinsons-cybergate-davao", "robinsons-place-tagum", "robinsons-place-gensan"]
 RUNS = 7
