@@ -4,6 +4,10 @@
 #   door2/record.sh headless 21 headless.mp4
 # Needs Xvfb, xterm, xdotool, xsetroot (x11-xserver-utils) and ffmpeg. Then, for a GIF:
 #   ffmpeg -i headful.mp4 -vf "fps=10,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=4:diff_mode=rectangle" door2_headful.gif
+# Each slide GIF starts with a 20 ms still of the finished state (a poster frame), so a thumbnail or a PDF
+# export shows the browser or the output rather than an empty screen:
+#   ffmpeg -ss 12.5 -i headful.mp4 -frames:v 1 poster.png   (the headless one uses its last frame)
+#   gifsicle --loopcount=forever -d2 poster.gif -d10 door2_headful.gif -o out.gif
 MODE=$1; SECS=$2; OUT=$3; R=$(cd "$(dirname "$0")" && pwd)
 export DISPLAY=:99
 Xvfb :99 -screen 0 1280x720x24 -dpi 96 -noreset -nolisten tcp >/dev/null 2>&1 & XV=$!
