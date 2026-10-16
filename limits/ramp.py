@@ -75,6 +75,7 @@ def main():
     ap.add_argument("--step", type=int, default=4)
     ap.add_argument("--seconds", type=float, default=6, help="how long to hold each rate")
     ap.add_argument("--rest", type=float, default=3, help="pause between rates")
+    ap.add_argument("--out", default=str(HERE / "ramp.json"), help="where to save the rows (default: the talk's limits/ramp.json)")
     args = ap.parse_args()
 
     server = subprocess.Popen([sys.executable, "-m", "replay.server", "--port", "8801",
@@ -93,7 +94,7 @@ def main():
     plateau = max(r["got_per_s"] for r in rows)
     print(f"\nPlateau: about {plateau:.0f} pages/s on this test server. A ceiling, not a budget: on a real site,\n"
           "use their stated limit, or start low and back off on slow answers, errors and Retry-After.")
-    (HERE / "ramp.json").write_text(json.dumps({"capacity": args.capacity, "rows": rows}, indent=2))
+    Path(args.out).write_text(json.dumps({"capacity": args.capacity, "rows": rows}, indent=2))
 
 
 if __name__ == "__main__":

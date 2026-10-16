@@ -36,6 +36,7 @@ def up(url="http://127.0.0.1:8800/health"):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--runs", type=int, default=1)
+    ap.add_argument("--out", default=str(HERE / "results.json"), help="where to save the times (default: the talk's scale/results.json)")
     ap.add_argument("--ft-python", help="a free-threaded Python 3.14t with requests and beautifulsoup4"
                     " (default: .venv-ft/bin/python if it exists)")
     args = ap.parse_args()
@@ -66,7 +67,7 @@ def main():
     finally:
         if server:
             server.terminate()
-    (HERE / "results.json").write_text(json.dumps(results, indent=2))
+    Path(args.out).write_text(json.dumps(results, indent=2))
 
 
 if __name__ == "__main__":
