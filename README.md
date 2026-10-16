@@ -8,8 +8,8 @@ The demos and benchmarks from the PyCon Davao 2026 talk
 It's the talk's live demos, step by step: the three doors; 53 malls with a for loop, asyncio, threads,
 processes and both, on a scoreboard next to the slides' numbers; SM direct and through your own proxies.
 A bonus part, not run on stage, makes the requests inside PengePassportPH by hand before the package
-makes them. The notebook carries the recorded pages with it, so the speed demos never touch Robinsons,
-and the passport part runs against a local stand-in unless you tick LIVE.
+makes them. The notebook's first cell clones this repo, recorded pages included, so the speed demos never
+touch Robinsons, and the passport part runs against a local stand-in unless you tick LIVE.
 
 Also from the talk:
 
@@ -46,9 +46,10 @@ replay/                      record the real site once, replay it on your machin
   record_robinsons.py          saves the 53 Robinsons pages, one a second, with how long each took
   record_megaworld.py          saves Uptown Mall's page and API answers (the doors' no-Wi-Fi fallback)
   server.py                    serves the saved pages with the same delays: what Part 2 and 3 hit
+  passport_standin.py          answers like passport.gov.ph from saved pages: the notebook's Part 4
 
-common/                      shared: the mall list (malls.py) and the timer (timing.py)
-data/                        robinsons_malls.json and the recordings
+common/                      shared: the mall list (malls.py), the timer (timing.py), the notebook's helpers (notebook.py)
+data/                        robinsons_malls.json and the recordings: Robinsons, Megaworld, the passport site
 ```
 
 Every script runs from the repo's top folder as a module, so the folders can import each other:
