@@ -42,7 +42,7 @@ if __name__ == "__main__":
     # what the slide shows, line for line (plus the proxy, the request counter and --headful)
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=not HEADFUL, **proxy)   # headless unless --headful
-        page = browser.new_page()
+        page = browser.new_page(no_viewport=HEADFUL)   # headful: the page fills the window you see
         page.on("request", lambda r: seen.append(r))
         page.goto(URL)                # Uptown Mall
         page.wait_for_selector(".store-item")
