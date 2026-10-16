@@ -29,7 +29,7 @@ doors/                       Part 1 · Where the data lives: one mall, three doo
   door2_megaworld.py           a dynamic page, empty until JavaScript runs: Playwright, headless or --headful
   door3_megaworld_api.py       the JSON the page fetches: requests .json()
 
-scale/                       Part 2 · Being at scale: 53 malls, six ways
+scale/                       Part 2 · Being at scale: 53 malls, five ways
   step1_sync.py                a for loop, one mall at a time
   step2_threads.py             53 threads, one per mall
   step3_asyncio.py             asyncio, all 53 at once
@@ -80,8 +80,8 @@ pip install -r requirements.txt
 python -m playwright install chromium        # only for door 2
 ```
 
-Optional, for the free-threaded row of the benchmark: a Python 3.14t interpreter with `requests` and
-`beautifulsoup4` installed, at `.venv-ft/bin/python` or passed as `python -m scale.bench --ft-python PATH`.
+Optional, a bonus row that isn't on the slides: 53 threads on free-threaded Python 3.14t (no GIL). Install a
+3.14t with `requests` and `beautifulsoup4`, then run `python -m scale.bench --ft-python PATH`.
 
 ## Run it
 
@@ -98,7 +98,7 @@ python -m doors.door3_megaworld_api
 
 python -m scale.step1_sync                   # about 33 s: start it during "Where the Time Goes"
 python -m scale.step3_asyncio                # the same 53 malls in about 2.3 s
-python -m scale.bench --runs 3               # all six, median of 3, as on the slides
+python -m scale.bench --runs 3               # all five, median of 3, as on the slides
 python -m limits.ramp                        # starts its own test server; about 1.5 min
 ```
 
@@ -123,7 +123,7 @@ needed on every platform.
 | Where the Time Goes | `data/recordings/robinsons/timings.json` |
 | Sync vs Async, Side by Side | `scale/three_malls.py`, `scale/step1_sync.py`, `scale/step3_asyncio.py` |
 | Threads vs Processes, Side by Side | `scale/step2_threads.py`, `scale/step4_processes.py`, `scale/memory.py` |
-| All 53 Malls, Six Ways | `scale/bench.py` → `scale/results.json` (adds `scale/step5_hybrid.py`) |
+| All 53 Malls, Five Ways | `scale/bench.py` → `scale/results.json` (adds `scale/step5_hybrid.py`) |
 | They Set the Bar | `limits/ramp.py` → `limits/ramp.json` (a test server, never a real site) |
 | Your IP Is a Signal | the notebook, Part 3 |
 | PengePassportPH, Polite by Construction | the notebook, Part 4 (a bonus, not run on stage) |
@@ -140,8 +140,10 @@ against the replay of 53 malls (8,554 stores; median page 511 ms of waiting and 
 | asyncio, all 53 at once | 2.3 s | 14x |
 | 53 processes, one per mall (fork) | 2.1 s | 15x |
 | A process per core (2), asyncio inside | 2.0 s | 16x |
-| 53 threads, Python 3.14t (no GIL) | 2.0 s | 16x |
 | The slowest mall (Opus Mall) on its own | 1.95 s | the floor |
+
+Not on the slides: 53 threads on free-threaded Python 3.14t (no GIL) took 2.0 s, level with the best row,
+because its threads parse on both cores. It's the notebook's bonus cell.
 
 93% of the for loop's 32.5 s is waiting on the network. Your laptop will differ, especially for
 processes (more cores, and `spawn` on macOS and Windows). Re-record from the network you present from

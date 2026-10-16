@@ -59,7 +59,8 @@ def _s(seconds, unit="s"):
 
 # ---------------------------------------------------------------- the Part 2 scoreboard
 ORDER = ["Sync, a for loop", "53 threads", "asyncio, all 53 at once", "53 processes",
-         "A process per core, asyncio inside", "53 threads, Python 3.14t"]
+         "A process per core, asyncio inside"]
+BONUS = "53 threads, Python 3.14t"         # not on the slides; shown once its cell has run
 SHOWN = {"A process per core, asyncio inside": f"{os.cpu_count()} processes + asyncio",
          "53 threads, Python 3.14t": "53 threads on 3.14t"}
 _board = {}
@@ -73,8 +74,9 @@ def record(label, seconds, rows):
     """Put one run on the scoreboard and print it next to the slide's number."""
     _board[label] = seconds
     talk = _talk().get(label)
+    where = "talk's machine" if label == BONUS else "slide"
     print(f"{SHOWN.get(label, label)}: all 53 malls, {rows:,} stores in {_s(seconds, ' s')}"
-          + (f"   (slide: {_s(talk, ' s')})" if talk else ""))
+          + (f"   ({where}: {_s(talk, ' s')})" if talk else ""))
 
 
 def score(label, started, pages):
@@ -87,8 +89,9 @@ def scoreboard():
     talk = _talk()
     loop = _board.get(ORDER[0]) or talk[ORDER[0]]
     print(f"{'all 53 malls':<26}{'here':>8}{'slide':>8}{'vs loop':>9}")
-    for label in ORDER:
-        mine, theirs = _board.get(label), talk.get(label)
+    rows = ORDER + ([BONUS] if BONUS in _board else [])
+    for label in rows:
+        mine, theirs = _board.get(label), (None if label == BONUS else talk.get(label))
         if mine is None:
             print(f"{SHOWN.get(label, label):<26}{'·':>8}{(_s(theirs) if theirs else '-'):>8}")
             continue

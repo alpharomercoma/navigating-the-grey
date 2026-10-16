@@ -37,8 +37,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--runs", type=int, default=1)
     ap.add_argument("--out", default=str(HERE / "results.json"), help="where to save the times (default: the talk's scale/results.json)")
-    ap.add_argument("--ft-python", help="a free-threaded Python 3.14t with requests and beautifulsoup4"
-                    " (default: .venv-ft/bin/python if it exists)")
+    ap.add_argument("--ft-python", help="a bonus row, not on the slides: 53 threads on this free-threaded"
+                    " Python 3.14t (needs requests and beautifulsoup4)")
     args = ap.parse_args()
 
     server = None
@@ -48,8 +48,6 @@ def main():
             time.sleep(0.2)
 
     plan = [(m, label, sys.executable) for m, label in PLAN]
-    if not args.ft_python and (ROOT / ".venv-ft/bin/python").exists():
-        args.ft_python = str(ROOT / ".venv-ft/bin/python")
     if args.ft_python:
         plan.append(("scale.step2_threads", "53 threads, Python 3.14t", args.ft_python))
     results = []
