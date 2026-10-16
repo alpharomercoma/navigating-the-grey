@@ -25,8 +25,8 @@ navigating_the_grey.ipynb    every demo, in Colab (the slides' QR code opens thi
 requirements.txt
 
 doors/                       Part 1 · Where the data lives: one mall, three doors
-  door1_robinsons.py           the stores are in the HTML: requests + BeautifulSoup
-  door2_megaworld.py           empty until JavaScript runs: Playwright, headless or --headful
+  door1_robinsons.py           a static page, the stores in the HTML: requests + BeautifulSoup
+  door2_megaworld.py           a dynamic page, empty until JavaScript runs: Playwright, headless or --headful
   door3_megaworld_api.py       the JSON the page fetches: requests .json()
 
 scale/                       Part 2 · Being at scale: 53 malls, six ways
@@ -59,8 +59,8 @@ Two real Philippine mall sites, three ways to read them:
 
 | Door | Site | What comes back | Script |
 |---|---|---|---|
-| 1 | robinsonsmalls.com/mall-info/robinsons-cybergate-davao | The stores are in the HTML | `doors/door1_robinsons.py` |
-| 2 | megaworld-lifestylemalls.com/malls/uptown-mall | An empty page that JavaScript fills | `doors/door2_megaworld.py` |
+| 1 | robinsonsmalls.com/mall-info/robinsons-cybergate-davao | A static page: the stores are in the HTML | `doors/door1_robinsons.py` |
+| 2 | megaworld-lifestylemalls.com/malls/uptown-mall | A dynamic page: empty until JavaScript fills it | `doors/door2_megaworld.py` |
 | 3 | cdn.contentstack.io/…/tenant/entries | The JSON the page fetches | `doors/door3_megaworld_api.py` |
 
 Both sites allow bots in robots.txt. Ayala's says `Disallow: /` to every bot, so it isn't here.
@@ -118,7 +118,7 @@ needed on every platform.
 | Today's Job, Where Does the Data Live? | `data/robinsons_malls.json`, `common/malls.py` |
 | Door 1 · Finding the Selector, Door 1 · Requests + BeautifulSoup | `doors/door1_robinsons.py` |
 | Door 2 · Uptown Mall in a Browser, Door 2 · Playwright | `doors/door2_megaworld.py` |
-| Door 2 · Headful or Headless? | `doors/door2_megaworld.py --headful`; the notebook, step 1.3 |
+| Door 2 · Headful, Door 2 · Headless | `doors/door2_megaworld.py` with and without `--headful`; the notebook, step 1.3 |
 | Door 3 · Find the Request, Door 3 · The Page's Own API | `doors/door3_megaworld_api.py` |
 | Where the Time Goes | `data/recordings/robinsons/timings.json` |
 | Sync vs Async, Side by Side | `scale/three_malls.py`, `scale/step1_sync.py`, `scale/step3_asyncio.py` |
@@ -171,3 +171,6 @@ costs: an idle thread adds about 11 to 17 KB; a process worker has about 6 to 14
   tokens the site sends to every visitor's browser.
 - The recorders in `replay/` identify themselves in the User-Agent and wait a second between requests.
   Keep it that way if you re-record.
+- The slides' door 2 recordings and the door 3 DevTools crop are on the
+  [`slide-assets`](https://github.com/alpharomercoma/navigating-the-grey/tree/slide-assets) branch, with the
+  script that recorded them.
